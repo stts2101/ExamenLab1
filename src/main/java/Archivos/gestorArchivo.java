@@ -2,36 +2,34 @@ package Archivos;
 import Evento.*;
 import Personas.*;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Date;
 
 
+public class gestorArchivo {
 
-
-
-public class GestorDatos {
-
-    public static void leerArchivoEstudiantes(Carrera carrera, String direccionArchivo) throws IOException {
-        try (BufferedReader br = new BufferedReader(new FileReader(direccionArchivo))) {
+    public static void leerEvento(Evento evento, String direccionArchivo) throws IOException {
+        try (BufferedReader br = new BufferedReader(new FileReader("Artistas.txt"))) {
             String textoArchivo;
             while ((textoArchivo = br.readLine()) != null) {
                 String[] data = textoArchivo.split(",");
-                carrera.getEstudiantes().add(new Estudiante(data[0], data[1], data[2], new Date(data[3])));
+                evento.getArtistas().add(new Artista(data[0], data[1]));
             }
         } catch (IOException e) {
-            throw new IOException("Error al leer el archivo de libros", e);
+            throw new IOException("Error al leer el archivo", e);
         }
     }
 
-    public static boolean registrarDato(Estudiante estudiante, String direccionArchivo) {
+    public static boolean registrarEvento(Evento evento) {
+        String direccionArchivo = "Eventos.txt";
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(direccionArchivo, true))) {
-            // Si el documento no es nuevo y tiene datos registrados, añadir una nueva línea
             if (new File(direccionArchivo).exists()) {
                 bw.newLine();
             }
-            bw.write(estudiante.toString());
+            bw.write(evento.toString());
             return true;
         } catch (IOException e) {
-            System.out.println("Error al ingresar estudiante, favor contactar con administrador");
+            System.out.println("Error al ingresar nuevo Evento");
             return false;
         }
     }

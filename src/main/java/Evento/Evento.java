@@ -50,4 +50,15 @@ public class Evento {
     public void setNroEntradas(String[][] nroEntradas) {
         this.nroEntradas = nroEntradas;
     }
+
+    public ArrayList<Artista> getArtistas() {
+        return artistas;
+    }
+
+    public void setArtistas(ArrayList<Artista> artistas) {
+        this.artistas = artistas;
+    }
+    public String toString(){
+        return nombreEvento + "," + fechaEvento + "," + lugarEvento;
+    }
 }
