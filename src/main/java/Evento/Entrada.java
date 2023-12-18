@@ -1,5 +1,6 @@
 package Evento;
 
+import Archivos.gestorArchivo;
 import Personas.Asistente;
 
 import java.util.ArrayList;
@@ -46,5 +47,17 @@ public class Entrada {
 
     public void setAsistentes(ArrayList<Asistente> asistentes) {
         this.asistentes = asistentes;
+    }
+    public void agregarAsistente(Asistente asistente){
+        ArrayList<Asistente> asistentes = new ArrayList<>();
+        if (!asistentes.contains(asistente) ){
+            asistentes.add(asistente);
+        }else {System.out.println("Asistente ya registrado");}
+    }
+    public void agregarEventoEntrada(Entrada entrada){
+        ArrayList<Asistente> entradas = new ArrayList<>();
+        if (!entradas.contains(entrada) ){
+            entradas.add(entrada);
+        }else {System.out.println("Entrada ya registrado");}
     }
 }

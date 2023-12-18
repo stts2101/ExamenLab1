@@ -24,4 +24,11 @@ public class Artista {
     public void setGnroMusical(String gnroMusical) {
         this.gnroMusical = gnroMusical;
     }
+
+    @Override
+    public String toString() {
+        return  nombreArtista +
+                "," + gnroMusical;
+
+    }
 }

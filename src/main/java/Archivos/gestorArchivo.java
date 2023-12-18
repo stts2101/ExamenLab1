@@ -8,8 +8,8 @@ import java.util.Date;
 
 public class gestorArchivo {
 
-    public static void leerEvento(Evento evento, String direccionArchivo) throws IOException {
-        try (BufferedReader br = new BufferedReader(new FileReader("Artistas.txt"))) {
+    public static void leerEvento(Evento evento) throws IOException {
+        try (BufferedReader br = new BufferedReader(new FileReader("Eventos.txt"))) {
             String textoArchivo;
             while ((textoArchivo = br.readLine()) != null) {
                 String[] data = textoArchivo.split(",");
@@ -30,6 +30,19 @@ public class gestorArchivo {
             return true;
         } catch (IOException e) {
             System.out.println("Error al ingresar nuevo Evento");
+            return false;
+        }
+    }
+    public static boolean registrarArtista(Artista artista) {
+        String direccionArchivo = "Artistas.txt";
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(direccionArchivo, true))) {
+            if (new File(direccionArchivo).exists()) {
+                bw.newLine();
+            }
+            bw.write(artista.toString());
+            return true;
+        } catch (IOException e) {
+            System.out.println("Error al ingresar nuevo Artista");
             return false;
         }
     }

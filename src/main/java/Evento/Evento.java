@@ -1,6 +1,8 @@
 package Evento;
 
 import Personas.*;
+import Archivos.*;
+import java.io.*;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -58,6 +60,19 @@ public class Evento {
     public void setArtistas(ArrayList<Artista> artistas) {
         this.artistas = artistas;
     }
+    public void agregarArtista(Artista artista){
+        ArrayList<Artista> artistas = new ArrayList<>();
+        if (!artistas.contains(artista)){
+            artistas.add(artista);
+        }else {System.out.println("Artista ya registrado");}
+
+    }
+    public void agregarEvento(Evento evento){
+        if (gestorArchivo.leerEvento(evento) ){
+            gestorArchivo.registrarEvento(evento);
+        }else {System.out.println("Artista ya registrado");}
+    }
+
     public String toString(){
         return nombreEvento + "," + fechaEvento + "," + lugarEvento;
     }
