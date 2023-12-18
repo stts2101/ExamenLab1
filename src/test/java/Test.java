@@ -8,6 +8,6 @@ public class Test {
         Date d1 = new Date(23,8,21);
         Evento e1 = new Evento("u2", d1,"temuco",nroEntrada);
 
-        gestorArchivo.registrarEvento(e1);
+         gestorArchivo.registrarEvento(e1);
     }
 }
