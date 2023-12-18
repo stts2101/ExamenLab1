@@ -13,8 +13,8 @@ public class Test {
         Date d1 = new Date(23, 8, 21);
         Evento e1 = new Evento("u2", d1, "temuco", nroEntrada);
         Artista a1 = new Artista("bon","rock");
-        ArrayList<Artista> artistas;
-        e1.setArtistas(artistas).add(a1x);
+        ArrayList<Artista> artistas = new ArrayList<>();
+        e1.setArtistas(artistas);
          // gestorArchivo.registrarEvento(e1)
 
         // gestorArchivo.leerEvento(e1);

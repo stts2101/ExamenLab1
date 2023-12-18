@@ -1,8 +1,8 @@
 package Evento;
 
 import Archivos.gestorArchivo;
-import Personas.Asistente;
-
+import Personas.*;
+import Evento.*;
 import java.util.ArrayList;
 
 public class Entrada {

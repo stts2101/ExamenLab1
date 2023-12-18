@@ -68,7 +68,8 @@ public class Evento {
 
     }
     public void agregarEvento(Evento evento){
-        if (gestorArchivo.leerEvento(evento) ){
+        gestorArchivo.leerEvento(evento);
+        if ( ){
             gestorArchivo.registrarEvento(evento);
         }else {System.out.println("Artista ya registrado");}
     }
